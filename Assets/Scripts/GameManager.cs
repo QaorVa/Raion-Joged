@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text mulText;
     public TMP_Text comboText;
+    public GameObject scoreManager;
 
     // Start is called before the first frame update
     void Start()
@@ -42,9 +43,9 @@ public class GameManager : MonoBehaviour
             if(Input.anyKeyDown)
             {
                 startPlaying = true;
-                beatScroll.hasStarted = true;
-
-                Music.Play();
+                
+                scoreManager.GetComponent<SongManager>().enabled = true;
+                
             }
         }
     }
