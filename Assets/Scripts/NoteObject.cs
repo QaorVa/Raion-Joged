@@ -6,6 +6,13 @@ public class NoteObject : MonoBehaviour
 {
 
     public bool canBePressed;
+
+    public bool perfect;
+    public bool good;
+    public bool okay;
+
+    public GameObject okayEffect, goodEffect, perfectEffect, missEffect;
+    
     public KeyCode keyToPress;
     public bool hasStarted;
     public float assignedTime;
@@ -43,9 +50,30 @@ public class NoteObject : MonoBehaviour
         {
             if(canBePressed)
             {
+                if(perfect)
+                {
+                    GameManager.instance.PerfectHit();
+
+                    Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+
+                } else if(good)
+                {
+                    GameManager.instance.GoodHit();
+
+                    Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
+
+                }
+                else if(okay)
+                {
+                    GameManager.instance.OkayHit();
+
+                    Instantiate(okayEffect, transform.position, okayEffect.transform.rotation);
+
+                }
+
                 gameObject.SetActive(false);
 
-                GameManager.instance.noteHit();
+                //GameManager.instance.noteHit();
             }
         }
     }
@@ -53,8 +81,19 @@ public class NoteObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // ngecek kalo panah udah masuk kotak buat dipencet
-        if(other.tag == "Activator")
+        if(other.tag == "Perfect")
         {
+            perfect = true;
+            canBePressed = true;
+        }
+        if(other.tag == "Good")
+        {
+            good = true;
+            canBePressed = true;
+        }
+        if(other.tag == "Okay")
+        {
+            okay = true;
             canBePressed = true;
         }
     }
@@ -62,11 +101,25 @@ public class NoteObject : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         // ngecek kalo panah udah keluar kotak buat dipencet
-        if (other.tag == "Activator" && gameObject.activeSelf)
+        if (other.tag == "Perfect" && gameObject.activeSelf)
         {
-            canBePressed = false;
+            perfect = false;
+        }
+        if (other.tag == "Good" && gameObject.activeSelf)
+        {
+            good = false;
+        }
 
+        if (other.tag == "Okay" && gameObject.activeSelf)
+        {
+            okay = false;
+
+            canBePressed = false;
+            
             GameManager.instance.noteMissed();
+
+            Instantiate(missEffect, transform.position, missEffect.transform.rotation);
+
         }
     }
 }

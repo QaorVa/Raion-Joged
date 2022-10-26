@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public int currentScore;
-    public int scorePerNote = 100;
+    public int perfectScore = 300;
+    public int goodScore = 200;
+    public int okayScore = 100;
 
     public int currentMultiplier;
     public int comboTracker;
@@ -78,10 +80,34 @@ public class GameManager : MonoBehaviour
         //menampilkan teks score, combo, dan multiplier
         comboText.text = comboTracker + "x";
 
-        currentScore += scorePerNote * currentMultiplier;
+        //currentScore += scorePerNote * currentMultiplier;
         scoreText.text = "SCORE: " + currentScore;
 
         mulText.text = "MULTIPLIER: x" + currentMultiplier;
+    }
+
+    public void OkayHit()
+    {
+        Debug.Log("Okay Hit");
+
+        currentScore += okayScore * currentMultiplier;
+        noteHit();
+    }
+
+    public void GoodHit()
+    {
+        Debug.Log("Good Hit");
+
+        currentScore += goodScore * currentMultiplier;
+        noteHit();
+    }
+
+    public void PerfectHit()
+    {
+        Debug.Log("Perfect Hit");
+
+        currentScore += perfectScore * currentMultiplier;
+        noteHit();
     }
 
     // method yang dijalankan saat note gagal untuk dihit
