@@ -8,16 +8,6 @@ public class LoadSceneManager : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f; //lama waktu transisi
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     // pakai method ini pada tombol pindah scene
     public void BackScene()
     {
@@ -26,7 +16,6 @@ public class LoadSceneManager : MonoBehaviour
     }
     public void LoadScene(string str) //String nama scene yangg dituju
     {
-        Debug.Log("Pindah");
         StartCoroutine(Scene(str));
     }
 

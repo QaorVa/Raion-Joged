@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
 
-    public AudioSource Music;
-    public bool startPlaying;
-
-    public BeatScroller beatScroll;
+    public static bool gameIsPaused = false;
+    public GameObject pauseMenu;
+    public GameObject scoreManager;
+    public AudioSource audioSource;
+    public LoadSceneManager loadManager;
 
     public static GameManager instance;
 
@@ -25,7 +27,6 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text mulText;
     public TMP_Text comboText;
-    public GameObject scoreManager;
 
     // Start is called before the first frame update
     void Start()
@@ -39,15 +40,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!startPlaying)
+
+        // mulai saat mencet any key 
+        if(Input.anyKeyDown && !gameIsPaused)
         {
-            // mulai saat mencet any key 
-            if(Input.anyKeyDown)
+           scoreManager.GetComponent<SongManager>().enabled = true;         
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(gameIsPaused)
             {
-                startPlaying = true;
-                
-                scoreManager.GetComponent<SongManager>().enabled = true;
-                
+                Resume();
+            }
+            else
+            {
+                Pause();
             }
         }
     }
@@ -131,5 +139,34 @@ public class GameManager : MonoBehaviour
         mulText.text = "MULTIPLIER: x" + currentMultiplier;
 
 
+    }
+
+    void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+        audioSource.Pause();
+    }
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        audioSource.Play();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+    }
+    public void Back()
+    {
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        pauseMenu.SetActive(false);
+        loadManager.BackScene();
     }
 }

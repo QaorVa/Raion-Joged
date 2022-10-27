@@ -20,16 +20,18 @@ public class ButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!GameManager.gameIsPaused){
         // merubah sprite ketika sebuah tombol ditekan
-        if (Input.GetKeyDown(keyToPress))
-        {
-            sr.sprite = pressedImg;
-        }
+            if (Input.GetKeyDown(keyToPress))
+            {
+                sr.sprite = pressedImg;
+            }
 
         // merubah sprite ketika sebuah tombol dilepaskan
-        if (Input.GetKeyUp(keyToPress))
-        {
-            sr.sprite = defaultImg;
+            if (Input.GetKeyUp(keyToPress))
+            {
+                sr.sprite = defaultImg;
+            }
         }
     }
 }

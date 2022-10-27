@@ -28,52 +28,42 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
-        float t = (float)(timeSinceInstantiated / (SongManager.Instance.noteTime * 2));
-
-        transform.localPosition = Vector3.Lerp(Vector3.up * SongManager.Instance.noteSpawnY, Vector3.up * SongManager.Instance.noteDespawnY, t);
-        if(!hasStarted)
+        if(!GameManager.gameIsPaused)
         {
-            /*
-            if(Input.anyKeyDown)
+            double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
+            float t = (float)(timeSinceInstantiated / (SongManager.Instance.noteTime * 2));
+
+            transform.localPosition = Vector3.Lerp(Vector3.up * SongManager.Instance.noteSpawnY, Vector3.up * SongManager.Instance.noteDespawnY, t);
+        
+            if(Input.GetKeyDown(keyToPress))
             {
-                hasStarted = true;
-            }
-            */
-        }
-        else // jalanin scroller panah
-        {
-            //transform.position += new Vector3(0f, beatTempo * Time.deltaTime, 0f);
-        }
-        // ngilangin panah note pas berhasil dipencet
-        if(Input.GetKeyDown(keyToPress))
-        {
-            if(canBePressed)
-            {
-                if(perfect)
+                if(canBePressed)
                 {
-                    GameManager.instance.PerfectHit();
+                    if(perfect)
+                    {
+                        GameManager.instance.PerfectHit();
 
-                    Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+                        Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
 
-                } else if(good)
-                {
-                    GameManager.instance.GoodHit();
+                    } else if(good)
+                    {
+                        GameManager.instance.GoodHit();
 
-                    Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
+                        Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
 
-                }
-                else if(okay)
-                {
-                    GameManager.instance.OkayHit();
+                    }
+                    else if(okay)
+                    {
+                        GameManager.instance.OkayHit();
 
-                    Instantiate(okayEffect, transform.position, okayEffect.transform.rotation);
+                        Instantiate(okayEffect, transform.position, okayEffect.transform.rotation);
 
-                }
+                    }
 
-                gameObject.SetActive(false);
+                    gameObject.SetActive(false);
 
                 //GameManager.instance.noteHit();
+                }
             }
         }
     }
