@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 9d063b79be80b2b4886e4c74b45f8a29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 2470310750723097804}
   - component: {fileID: 1976948515992564658}
   - component: {fileID: 7152508043547995}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4938,7 +4938,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

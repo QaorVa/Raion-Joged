@@ -122,6 +122,6 @@ MonoBehaviour:
   goodEffect: {fileID: 3948936203591088952, guid: 61abb496888ac344282d26522590ae82, type: 3}
   perfectEffect: {fileID: 3964081315712781922, guid: 719fdb09f98e3fa45bd2d1bda62ac20e, type: 3}
   missEffect: {fileID: 6556096230492744297, guid: 74c0398ae10c4a041bd148963d91b8de, type: 3}
-  keyToPress: 276
+  keyToPress: 100
   hasStarted: 0
   assignedTime: 0
