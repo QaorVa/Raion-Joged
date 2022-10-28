@@ -32,4 +32,8 @@ public class LoadSceneManager : MonoBehaviour
        yield return new WaitForSeconds(transitionTime);
        SceneManager.LoadScene(index); 
     }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

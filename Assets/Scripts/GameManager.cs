@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public int goodScore = 200;
     public int okayScore = 100;
 
+    // -----------------------------baru--------------------------------
+    public int highScore = 0;
+
     public int currentMultiplier;
     public int comboTracker;
     public int[] multiplierThresholds;
@@ -46,6 +49,14 @@ public class GameManager : MonoBehaviour
 
         scoreText.text = "SCORE: 0";
         currentMultiplier = 1;
+
+        // PlayerPrefs.DeleteAll();
+        // mengambil data highscore, di editor save-an kesimpen juga jadi klo mau reset jalanin kode diatas 
+        if(PlayerPrefs.HasKey("lagu1"))
+        {
+            highScore = PlayerPrefs.GetInt("lagu1");
+            Debug.Log(highScore);
+        }
     }
 
     // Update is called once per frame
@@ -245,5 +256,12 @@ public class GameManager : MonoBehaviour
 
         percentHitText.text = percentHit.ToString("F1") + "%";
         finalScoreText.text = currentScore.ToString();
+
+        // save highscore
+        if(currentScore > highScore)
+        {
+            highScore = currentScore;
+            PlayerPrefs.SetInt("lagu1", highScore);
+        }
     }
 }
