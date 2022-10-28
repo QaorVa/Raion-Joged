@@ -27,14 +27,14 @@ public class LoadSceneManager : MonoBehaviour
     IEnumerator Scene(string str)
     {
        transition.SetTrigger("Start");
-       yield return new WaitForSeconds(transitionTime);
+       yield return new WaitForSecondsRealtime(transitionTime);
        SceneManager.LoadScene(str); 
     }
 
     IEnumerator Scene(int index)
     {
        transition.SetTrigger("Start");
-       yield return new WaitForSeconds(transitionTime);
+       yield return new WaitForSecondsRealtime(transitionTime);
        SceneManager.LoadScene(index); 
     }
     public void Exit()

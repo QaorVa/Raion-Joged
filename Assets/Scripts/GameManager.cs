@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public static bool gameIsPaused = false;
     public static bool isFailed = false;
 
-    public GameObject pauseMenu;
     public GameObject scoreManager;
     public AudioSource audioSource;
     public LoadSceneManager loadManager;
@@ -46,22 +45,27 @@ public class GameManager : MonoBehaviour
 
     public GameObject A, B, C, D, S, F;
 
-    public GameObject resultScreen, failScreen;
+    public GameObject resultScreen, failScreen, pauseScreen;
     public TMP_Text percentHitText, okaysText, goodsText, perfectsText, missesText, rankText, finalScoreText, accText;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         instance = this;
+
+        // Reset semua pause
+        gameIsPaused = false;
+        Time.timeScale = 1;
+        isFailed = false;
 
         scoreText.text = "SCORE: 0";
         currentMultiplier = 1;
 
-        // PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         // mengambil data highscore, di editor save-an kesimpen juga jadi klo mau reset jalanin kode diatas 
-        if(PlayerPrefs.HasKey("lagu1"))
+        if(PlayerPrefs.HasKey("Bullet"))
         {
-            highScore = PlayerPrefs.GetInt("lagu1");
+            highScore = PlayerPrefs.GetInt("Bullet");
             Debug.Log(highScore);
         }
     }
@@ -69,6 +73,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.Escape) && !resultScreen.activeInHierarchy && !failScreen.activeInHierarchy && !startingScreen.activeInHierarchy)
+        {
+            if(gameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
 
         // mulai saat mencet any key 
         if(Input.anyKeyDown && !gameIsPaused && !isFailed)
@@ -118,20 +134,16 @@ public class GameManager : MonoBehaviour
                 float percentHit = (totalHit / totalNotes) * 100f;
 
                 percentHitText.text = percentHit.ToString("F1") + "%";
+
+                // save highscore
+                if(currentScore > highScore)
+                {
+                    highScore = currentScore;
+                    PlayerPrefs.SetInt("Bullet", highScore);
+                }
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && !resultScreen.activeInHierarchy && !failScreen.activeInHierarchy)
-        {
-            if(gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        }
     }
 
     // method yang dijalankan saat note berhasil dihit
@@ -242,14 +254,14 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        pauseScreen.SetActive(true);
+        //Time.timeScale = 0f;
         gameIsPaused = true;
         audioSource.Pause();
     }
     public void Resume()
     {
-        pauseMenu.SetActive(false);
+        pauseScreen.GetComponent<Animator>().SetTrigger("PopEnd");
         Time.timeScale = 1f;
         gameIsPaused = false;
         audioSource.Play();
@@ -260,13 +272,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
         gameIsPaused = false;
+        isFailed = false;
     }
     public void Back()
     {
         Time.timeScale = 1f;
         gameIsPaused = false;
-        pauseMenu.SetActive(false);
+        pauseScreen.SetActive(false);
         loadManager.BackScene();
+        isFailed = false;
     }
 
     public void Failed()
@@ -276,7 +290,7 @@ public class GameManager : MonoBehaviour
         failScreen.SetActive(true);
         scoreText.enabled = false;
         mulText.enabled = false;
-        scoreManager.GetComponent<SongManager>().enabled = false;
+        //scoreManager.GetComponent<SongManager>().enabled = false;
 
         okaysText.text = okayHits.ToString();
         goodsText.text = goodHits.ToString();
@@ -293,10 +307,10 @@ public class GameManager : MonoBehaviour
         if(currentScore > highScore)
         {
             highScore = currentScore;
-            PlayerPrefs.SetInt("lagu1", highScore);
+            PlayerPrefs.SetInt("Bullet", highScore);
         }
 
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         gameIsPaused = true;
         audioSource.Pause();
     }
