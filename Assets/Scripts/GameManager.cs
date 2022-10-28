@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     public LoadSceneManager loadManager;
 
+    public GameObject startingScreen;
+
     public static GameManager instance;
 
     public int currentScore;
@@ -24,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     // -----------------------------baru--------------------------------
     public int highScore = 0;
+
+    // nyari max score buat ranking
+    public int maxScore;
 
     public int currentMultiplier;
     public int comboTracker;
@@ -39,8 +44,10 @@ public class GameManager : MonoBehaviour
     public float perfectHits;
     public float missedHits;
 
-    public GameObject resultScreen;
-    public TMP_Text percentHitText, okaysText, goodsText, perfectsText, missesText, rankText, finalScoreText;
+    public GameObject A, B, C, D, S, F;
+
+    public GameObject resultScreen, failScreen;
+    public TMP_Text percentHitText, okaysText, goodsText, perfectsText, missesText, rankText, finalScoreText, accText;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +73,8 @@ public class GameManager : MonoBehaviour
         // mulai saat mencet any key 
         if(Input.anyKeyDown && !gameIsPaused && !isFailed)
         {
-           scoreManager.GetComponent<SongManager>().enabled = true;
+            scoreManager.GetComponent<SongManager>().enabled = true;
+            startingScreen.SetActive(false);
         }
 
         if(!gameIsPaused)
@@ -75,12 +83,30 @@ public class GameManager : MonoBehaviour
             {
                 Failed();
             }
-            /*
-            else if (!audioSource.isPlaying && !resultScreen.activeInHierarchy && Health.instance.alive)
+            
+            else if (audioSource.time >= audioSource.clip.length && !resultScreen.activeInHierarchy && Health.instance.alive)
             {
                 resultScreen.SetActive(true);
-                scoreText.enabled = false;
-                mulText.enabled = false;
+
+                if (currentScore >= maxScore * 0.75f)
+                {
+                    S.SetActive(true);
+                } else if (currentScore >= maxScore * 0.45f)
+                {
+                    A.SetActive(true);
+                } else if (currentScore >= maxScore * 0.25f)
+                {
+                    B.SetActive(true);
+                } else if (currentScore >= maxScore * 0.19f)
+                {
+                    C.SetActive(true);
+                } else if (currentScore >= maxScore * 0.08f)
+                {
+                    D.SetActive(true);
+                } else
+                {
+                    F.SetActive(true);
+                }
 
                 okaysText.text = okayHits.ToString();
                 goodsText.text = goodHits.ToString();
@@ -92,10 +118,10 @@ public class GameManager : MonoBehaviour
                 float percentHit = (totalHit / totalNotes) * 100f;
 
                 percentHitText.text = percentHit.ToString("F1") + "%";
-            } */
+            }
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && !resultScreen.activeInHierarchy)
+        if(Input.GetKeyDown(KeyCode.Escape) && !resultScreen.activeInHierarchy && !failScreen.activeInHierarchy)
         {
             if(gameIsPaused)
             {
@@ -142,6 +168,10 @@ public class GameManager : MonoBehaviour
         scoreText.text = "SCORE: " + currentScore;
 
         mulText.text = "MULTIPLIER: x" + currentMultiplier;
+
+        Accuracy();
+
+        maxScore += perfectScore * 4;
     }
 
     public void OkayHit()
@@ -191,7 +221,7 @@ public class GameManager : MonoBehaviour
         //mereset nilai combo
         comboTracker = 0;
 
-        Health.instance.TakeDamage(1f);
+        Health.instance.TakeDamage(4f);
 
         //menghilangkan teks combo jika combo = 0
         if (comboTracker == 0)
@@ -205,10 +235,12 @@ public class GameManager : MonoBehaviour
         //menampilkan teks multiplier
         mulText.text = "MULTIPLIER: x" + currentMultiplier;
 
+        Accuracy();
 
+        maxScore += perfectScore * 4;
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -241,7 +273,7 @@ public class GameManager : MonoBehaviour
     {
         isFailed = true;
 
-        resultScreen.SetActive(true);
+        failScreen.SetActive(true);
         scoreText.enabled = false;
         mulText.enabled = false;
         scoreManager.GetComponent<SongManager>().enabled = false;
@@ -263,5 +295,16 @@ public class GameManager : MonoBehaviour
             highScore = currentScore;
             PlayerPrefs.SetInt("lagu1", highScore);
         }
+
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+        audioSource.Pause();
+    }
+
+    public void Accuracy()
+    {
+        float totalHit = okayHits + goodHits + perfectHits;
+        float percentHit = (totalHit / totalNotes) * 100f;
+        accText.text = percentHit.ToString("F0");
     }
 }
