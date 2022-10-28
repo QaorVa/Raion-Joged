@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour
         //mereset nilai combo
         comboTracker = 0;
 
-        Health.instance.TakeDamage(10f);
+        Health.instance.TakeDamage(1f);
 
         //menghilangkan teks combo jika combo = 0
         if (comboTracker == 0)

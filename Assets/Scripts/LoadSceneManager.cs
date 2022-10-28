@@ -9,6 +9,11 @@ public class LoadSceneManager : MonoBehaviour
     public float transitionTime = 1f; //lama waktu transisi
     // Start is called before the first frame update
     // pakai method ini pada tombol pindah scene
+
+    public void Start()
+    {
+        gameObject.SetActive(true);
+    }
     public void BackScene()
     {
         // Load scene sebelum scene yang sedang aktif

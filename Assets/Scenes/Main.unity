@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1bbda9210988dfd4db252a09838d254f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a29c4f76dde8cc47aced286b96e5961, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe713a37c91dcb4d88d72fc462f3a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultImg: {fileID: 21300000, guid: 1bbda9210988dfd4db252a09838d254f, type: 3}
-  pressedImg: {fileID: 21300000, guid: cacc39dd2a4e88a43aadeddd73e9b1e2, type: 3}
+  defaultImg: {fileID: 21300000, guid: 4a29c4f76dde8cc47aced286b96e5961, type: 3}
+  pressedImg: {fileID: 21300000, guid: 856252269cd766d438e1ef094529d2c7, type: 3}
   keyToPress: 102
 --- !u!50 &42740292
 Rigidbody2D:
@@ -265,7 +265,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.96, y: 1.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -890,7 +890,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ed2984e24d5df6f46a80ead6ad2964fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 708cefb0668f1a140af41f15861722b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -930,8 +930,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe713a37c91dcb4d88d72fc462f3a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultImg: {fileID: 21300000, guid: ed2984e24d5df6f46a80ead6ad2964fa, type: 3}
-  pressedImg: {fileID: 21300000, guid: 8f47ff751b3bdec48862adf0100c74fa, type: 3}
+  defaultImg: {fileID: 21300000, guid: 708cefb0668f1a140af41f15861722b7, type: 3}
+  pressedImg: {fileID: 21300000, guid: 30ea42e885bba414eab694ce578b0708, type: 3}
   keyToPress: 106
 --- !u!50 &335185283
 Rigidbody2D:
@@ -971,7 +971,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.96, y: 1.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1099,7 +1099,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ad187f74f2d0cc4499f39a0267b9eda8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7850a864ad5ca9e46919036a28a3aff4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1139,8 +1139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe713a37c91dcb4d88d72fc462f3a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultImg: {fileID: 21300000, guid: ad187f74f2d0cc4499f39a0267b9eda8, type: 3}
-  pressedImg: {fileID: 21300000, guid: 18bf226de2d59284e904c26430f659c9, type: 3}
+  defaultImg: {fileID: 21300000, guid: 7850a864ad5ca9e46919036a28a3aff4, type: 3}
+  pressedImg: {fileID: 21300000, guid: 542d087f05aef8f4b9584683d24426be, type: 3}
   keyToPress: 100
 --- !u!50 &450328918
 Rigidbody2D:
@@ -1180,7 +1180,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.11, y: 0.96}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1434,7 +1434,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 747e28bfb2ea7e44cadca53d7d44ba62, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 57ae641b652a9d44e8ab28ae2d67392b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.174
   m_Pitch: 1
@@ -3526,7 +3526,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c3c13b1f8baa5dd4a86d3dc186668178, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13f75ec716aae9942a29209a996c9d6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3566,8 +3566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe713a37c91dcb4d88d72fc462f3a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultImg: {fileID: 21300000, guid: c3c13b1f8baa5dd4a86d3dc186668178, type: 3}
-  pressedImg: {fileID: 21300000, guid: 2d10ec486261df445b73774ff82f1b69, type: 3}
+  defaultImg: {fileID: 21300000, guid: 13f75ec716aae9942a29209a996c9d6d, type: 3}
+  pressedImg: {fileID: 21300000, guid: aa5669b8328cfe94e9c43bf41ae17461, type: 3}
   keyToPress: 107
 --- !u!50 &1954822629
 Rigidbody2D:
@@ -3607,7 +3607,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.11, y: 0.96}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3653,6 +3653,7 @@ MonoBehaviour:
   perfectScore: 300
   goodScore: 200
   okayScore: 100
+  highScore: 0
   currentMultiplier: 1
   comboTracker: 0
   multiplierThresholds: 050000000a0000000f000000
