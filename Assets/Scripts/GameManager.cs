@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject A, B, C, D, S, F;
 
-    public GameObject resultScreen, failScreen, pauseScreen;
+    public GameObject resultScreen, resultsScreen2, failScreen, pauseScreen;
     public TMP_Text percentHitText, okaysText, goodsText, perfectsText, missesText, rankText, finalScoreText, accText;
 
     // Start is called before the first frame update
@@ -103,6 +103,11 @@ public class GameManager : MonoBehaviour
             else if (audioSource.time >= audioSource.clip.length && !resultScreen.activeInHierarchy && Health.instance.alive)
             {
                 resultScreen.SetActive(true);
+
+                LeanTween.moveLocalY(resultsScreen2, 0f, 1f)
+                .setDelay(0.5f)
+                .setIgnoreTimeScale(true)
+                .setEase(LeanTweenType.easeOutBounce);
 
                 if (currentScore >= maxScore * 0.75f)
                 {

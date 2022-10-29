@@ -8,6 +8,11 @@ public class onClickMove : MonoBehaviour
     public GameObject musicPos;
     public GameObject SFXPos;
 
+    public GameObject button1;
+    public GameObject button2;
+    public GameObject button3;
+
+
     [SerializeField] float startObject;
 
     // Start is called before the first frame update
@@ -39,6 +44,13 @@ public class onClickMove : MonoBehaviour
 
     public void onClickScale()
     {
-        LeanTween.scale(gameObject, new Vector3(startObject, startObject, startObject), 0.2f).setEase(LeanTweenType.easeOutExpo);
+        LeanTween.scale(gameObject, new Vector3(startObject, startObject, startObject), 0.2f).setEase(LeanTweenType.easeOutElastic);
+    }
+
+    public void onClickMoveOther()
+    {
+        LeanTween.moveLocalX(button1, 0, .7f).setEase(LeanTweenType.easeOutExpo);
+        LeanTween.moveLocalX(button2, 0, .7f).setEase(LeanTweenType.easeOutExpo);
+        LeanTween.moveLocalX(button3, 0, .7f).setEase(LeanTweenType.easeOutExpo);
     }
 }
