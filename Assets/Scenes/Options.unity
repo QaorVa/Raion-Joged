@@ -207,6 +207,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &118484233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8522427439706420072, guid: 93208119b30a8a74eb29797f3267bcbd, type: 3}
+  m_PrefabInstance: {fileID: 8522427440064691666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &141837900
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +388,9 @@ MonoBehaviour:
   masterPos: {fileID: 498359212}
   musicPos: {fileID: 2065792303}
   SFXPos: {fileID: 1148708406}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
   startObject: 0
 --- !u!1 &285167079
 GameObject:
@@ -465,6 +473,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8522427439706420073, guid: 93208119b30a8a74eb29797f3267bcbd, type: 3}
   m_PrefabInstance: {fileID: 8522427440064691666}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &447139516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118484233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 1
+  clickSFX: 0
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 1
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1 &451011547
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +732,7 @@ GameObject:
   - component: {fileID: 498359214}
   - component: {fileID: 498359217}
   - component: {fileID: 498359218}
+  - component: {fileID: 498359219}
   m_Layer: 5
   m_Name: MasterButton
   m_TagString: Untagged
@@ -880,7 +908,29 @@ MonoBehaviour:
   masterPos: {fileID: 0}
   musicPos: {fileID: 0}
   SFXPos: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
   startObject: 1
+--- !u!114 &498359219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498359212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 0
+  clickSFX: 0
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 1
 --- !u!1 &675535498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1165,7 @@ GameObject:
   - component: {fileID: 1148708408}
   - component: {fileID: 1148708411}
   - component: {fileID: 1148708412}
+  - component: {fileID: 1148708413}
   m_Layer: 5
   m_Name: SFXButton
   m_TagString: Untagged
@@ -1290,7 +1341,29 @@ MonoBehaviour:
   masterPos: {fileID: 0}
   musicPos: {fileID: 0}
   SFXPos: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
   startObject: 1
+--- !u!114 &1148708413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148708406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 0
+  clickSFX: 0
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 1
 --- !u!1 &1224362567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1590,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637604750}
   m_CullTransparentMesh: 1
+--- !u!1001 &1802655234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8266641521138213769, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_Name
+      value: SFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d1371d789580674faafe38f12151adb, type: 3}
 --- !u!1001 &2051730627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1607,6 +1737,7 @@ GameObject:
   - component: {fileID: 2065792305}
   - component: {fileID: 2065792308}
   - component: {fileID: 2065792309}
+  - component: {fileID: 2065792310}
   m_Layer: 5
   m_Name: MusicButton
   m_TagString: Untagged
@@ -1782,7 +1913,29 @@ MonoBehaviour:
   masterPos: {fileID: 0}
   musicPos: {fileID: 0}
   SFXPos: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
   startObject: 1
+--- !u!114 &2065792310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065792303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 0
+  clickSFX: 0
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 1
 --- !u!1001 &1302563026677780289
 PrefabInstance:
   m_ObjectHideFlags: 0

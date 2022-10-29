@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 169728726}
   - component: {fileID: 169728725}
   - component: {fileID: 169728724}
+  - component: {fileID: 169728727}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -253,8 +254,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2096905616}
         m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: Exit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -301,6 +302,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169728722}
   m_CullTransparentMesh: 1
+--- !u!114 &169728727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169728722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 1
+  clickSFX: 1
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1 &230629587
 GameObject:
   m_ObjectHideFlags: 0
@@ -5572,6 +5592,7 @@ GameObject:
   - component: {fileID: 648296796}
   - component: {fileID: 648296795}
   - component: {fileID: 648296794}
+  - component: {fileID: 648296797}
   m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -5751,6 +5772,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &648296797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648296789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 1
+  clickSFX: 1
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1 &809798636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5948,6 +5988,68 @@ MonoBehaviour:
   startObject: 1
   scaleObject: 1.1
   isSelected: 0
+--- !u!1001 &897845222
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1915709542066752369, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_TagString
+      value: BGMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213769, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_Name
+      value: SFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4654002169062426864, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 8d1371d789580674faafe38f12151adb, type: 3}
 --- !u!1 &1426930239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5960,6 +6062,7 @@ GameObject:
   - component: {fileID: 1426930243}
   - component: {fileID: 1426930242}
   - component: {fileID: 1426930241}
+  - component: {fileID: 1426930244}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -6081,6 +6184,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426930239}
   m_CullTransparentMesh: 1
+--- !u!114 &1426930244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426930239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 1
+  clickSFX: 1
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1 &1500351500
 GameObject:
   m_ObjectHideFlags: 0
@@ -6130,6 +6252,7 @@ GameObject:
   - component: {fileID: 1733080907}
   - component: {fileID: 1733080906}
   - component: {fileID: 1733080905}
+  - component: {fileID: 1733080908}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -6251,6 +6374,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733080903}
   m_CullTransparentMesh: 1
+--- !u!114 &1733080908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733080903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 1
+  clickSFX: 1
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1 &1977778363
 GameObject:
   m_ObjectHideFlags: 0

@@ -152,7 +152,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 325220268}
-  - {fileID: 1395504243}
   - {fileID: 1431261833}
   - {fileID: 1578159812}
   m_Father: {fileID: 2028122746}
@@ -253,6 +252,7 @@ GameObject:
   - component: {fileID: 325220271}
   - component: {fileID: 325220270}
   - component: {fileID: 325220269}
+  - component: {fileID: 325220274}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -295,6 +295,9 @@ MonoBehaviour:
   masterPos: {fileID: 0}
   musicPos: {fileID: 0}
   SFXPos: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
   startObject: 1
 --- !u!114 &325220270
 MonoBehaviour:
@@ -417,6 +420,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325220267}
   m_CullTransparentMesh: 1
+--- !u!114 &325220274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325220267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 1
+  clickSFX: 0
+  nextClickSFX: 0
+  playClickSFX: 0
+  backClickSFX: 1
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1001 &349909695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -586,7 +608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &600995588
 RectTransform:
   m_ObjectHideFlags: 0
@@ -878,6 +900,7 @@ GameObject:
   - component: {fileID: 1395504246}
   - component: {fileID: 1395504245}
   - component: {fileID: 1395504244}
+  - component: {fileID: 1395504249}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -897,12 +920,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3027251}
-  m_RootOrder: 1
+  m_Father: {fileID: 1426042933}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -175}
+  m_AnchoredPosition: {x: -0.81608534, y: -177.64789}
   m_SizeDelta: {x: 158.508, y: 86.7997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1395504244
@@ -920,6 +943,9 @@ MonoBehaviour:
   masterPos: {fileID: 0}
   musicPos: {fileID: 0}
   SFXPos: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
   startObject: 1
 --- !u!114 &1395504245
 MonoBehaviour:
@@ -1042,6 +1068,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395504242}
   m_CullTransparentMesh: 1
+--- !u!114 &1395504249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395504242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 1
+  clickSFX: 0
+  nextClickSFX: 0
+  playClickSFX: 1
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1 &1426042932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1122,7 @@ RectTransform:
   - {fileID: 1471777889}
   - {fileID: 1127713416}
   - {fileID: 1641087514}
+  - {fileID: 1395504243}
   m_Father: {fileID: 2069102777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1109,7 +1155,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 58b2b5e6a298f7443be9d6e5fbbf3033, type: 3}
   - {fileID: 21300000, guid: 991cc2257e36de944927a22691367271, type: 3}
   - {fileID: 21300000, guid: 52a3446655d3f4b4fac147483de8474d, type: 3}
-  centerGrade: {fileID: 1641087513}
+  centerGrade: {fileID: 1915243459}
 --- !u!114 &1426042935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,6 +1228,7 @@ GameObject:
   - component: {fileID: 1431261836}
   - component: {fileID: 1431261835}
   - component: {fileID: 1431261834}
+  - component: {fileID: 1431261839}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -1202,7 +1249,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3027251}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1224,6 +1271,9 @@ MonoBehaviour:
   masterPos: {fileID: 0}
   musicPos: {fileID: 0}
   SFXPos: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
   startObject: 1
 --- !u!114 &1431261835
 MonoBehaviour:
@@ -1346,6 +1396,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431261832}
   m_CullTransparentMesh: 1
+--- !u!114 &1431261839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431261832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 0
+  clickSFX: 0
+  nextClickSFX: 1
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1 &1471777888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1501,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 18
-  m_fontSizeBase: 12
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -1495,6 +1564,7 @@ GameObject:
   - component: {fileID: 1578159815}
   - component: {fileID: 1578159814}
   - component: {fileID: 1578159813}
+  - component: {fileID: 1578159818}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -1515,7 +1585,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3027251}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1537,6 +1607,9 @@ MonoBehaviour:
   masterPos: {fileID: 0}
   musicPos: {fileID: 0}
   SFXPos: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
   startObject: 1
 --- !u!114 &1578159814
 MonoBehaviour:
@@ -1659,6 +1732,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578159811}
   m_CullTransparentMesh: 1
+--- !u!114 &1578159818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578159811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85becb6b54e9f94e99d1f9cd7c50c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFX: 0
+  clickSFX: 0
+  nextClickSFX: 1
+  playClickSFX: 0
+  backClickSFX: 0
+  pauseClickSFX: 0
+  masterClickSFX: 0
 --- !u!1 &1641087513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,8 +1931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000017285, y: 0.0000022054}
-  m_SizeDelta: {x: 41.6154, y: 44.0855}
+  m_AnchoredPosition: {x: -0.000041097, y: -0.00009286}
+  m_SizeDelta: {x: 63.429, y: 64.187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915243461
 MonoBehaviour:
@@ -2062,3 +2154,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069102776}
   m_CullTransparentMesh: 1
+--- !u!1001 &8266641520850175137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8266641521138213769, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_Name
+      value: SFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266641521138213771, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d1371d789580674faafe38f12151adb, type: 3}

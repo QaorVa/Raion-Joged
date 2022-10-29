@@ -59,30 +59,9 @@ public class SongSelectManager : MonoBehaviour
             centerGrade.SetActive(true);
 
             //highscore sesuai grade blum ya di edit lg ini berapa, grade[0 - 5] -> sprite[S - F]
-            if(PlayerPrefs.GetInt(song.songName) > 100)
-            {
-                centerGrade.GetComponent<Image>().sprite = grade[0];
-            }
-            else if(PlayerPrefs.GetInt(song.songName) > 90)
-            {
-                centerGrade.GetComponent<Image>().sprite = grade[1];
-            }
-            else if(PlayerPrefs.GetInt(song.songName) > 80)
-            {
-                centerGrade.GetComponent<Image>().sprite = grade[2];
-            }
-            else if(PlayerPrefs.GetInt(song.songName) > 70)
-            {
-                centerGrade.GetComponent<Image>().sprite = grade[3];
-            }
-            else if(PlayerPrefs.GetInt(song.songName) > 60)
-            {
-                centerGrade.GetComponent<Image>().sprite = grade[4];
-            }
-            else if(PlayerPrefs.GetInt(song.songName) > 50)
-            {
-                centerGrade.GetComponent<Image>().sprite = grade[5];
-            }
+            Debug.Log(PlayerPrefs.GetInt(song.songName + "Grade"));
+            centerGrade.GetComponent<Image>().sprite = grade[PlayerPrefs.GetInt(song.songName + "Grade")];
+            
 
         } 
         else

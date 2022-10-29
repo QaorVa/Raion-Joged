@@ -61,12 +61,10 @@ public class GameManager : MonoBehaviour
         scoreText.text = "SCORE: 0";
         currentMultiplier = 1;
 
-        PlayerPrefs.DeleteAll();
         // mengambil data highscore, di editor save-an kesimpen juga jadi klo mau reset jalanin kode diatas 
         if(PlayerPrefs.HasKey("Bullet"))
         {
             highScore = PlayerPrefs.GetInt("Bullet");
-            Debug.Log(highScore);
         }
     }
 
@@ -103,6 +101,7 @@ public class GameManager : MonoBehaviour
             else if (audioSource.time >= audioSource.clip.length && !resultScreen.activeInHierarchy && Health.instance.alive)
             {
                 resultScreen.SetActive(true);
+                resultScreen.GetComponent<AudioSource>().Play();
 
                 LeanTween.moveLocalY(resultsScreen2, 0f, 1f)
                 .setDelay(0.5f)
@@ -112,21 +111,57 @@ public class GameManager : MonoBehaviour
                 if (currentScore >= maxScore * 0.75f)
                 {
                     S.SetActive(true);
+                    if(currentScore > highScore)
+                    {
+                        highScore = currentScore;
+                        PlayerPrefs.SetInt("Bullet", highScore);
+                        PlayerPrefs.SetInt("BulletGrade", 0);
+                    }
                 } else if (currentScore >= maxScore * 0.45f)
                 {
                     A.SetActive(true);
+                    if(currentScore > highScore)
+                    {
+                        highScore = currentScore;
+                        PlayerPrefs.SetInt("Bullet", highScore);
+                        PlayerPrefs.SetInt("BulletGrade", 1);
+                    }
                 } else if (currentScore >= maxScore * 0.25f)
                 {
                     B.SetActive(true);
+                    if(currentScore > highScore)
+                    {
+                        highScore = currentScore;
+                        PlayerPrefs.SetInt("Bullet", highScore);
+                        PlayerPrefs.SetInt("BulletGrade", 2);
+                    }
                 } else if (currentScore >= maxScore * 0.19f)
                 {
                     C.SetActive(true);
+                    if(currentScore > highScore)
+                    {
+                        highScore = currentScore;
+                        PlayerPrefs.SetInt("Bullet", highScore);
+                        PlayerPrefs.SetInt("BulletGrade", 3);
+                    }
                 } else if (currentScore >= maxScore * 0.08f)
                 {
                     D.SetActive(true);
+                    if(currentScore > highScore)
+                    {
+                        highScore = currentScore;
+                        PlayerPrefs.SetInt("Bullet", highScore);
+                        PlayerPrefs.SetInt("BulletGrade", 4);
+                    }
                 } else
                 {
                     F.SetActive(true);
+                    if(currentScore > highScore)
+                    {
+                        highScore = currentScore;
+                        PlayerPrefs.SetInt("Bullet", highScore);
+                        PlayerPrefs.SetInt("BulletGrade", 5);
+                    }
                 }
 
                 okaysText.text = okayHits.ToString();
@@ -140,12 +175,7 @@ public class GameManager : MonoBehaviour
 
                 percentHitText.text = percentHit.ToString("F1") + "%";
 
-                // save highscore
-                if(currentScore > highScore)
-                {
-                    highScore = currentScore;
-                    PlayerPrefs.SetInt("Bullet", highScore);
-                }
+
             }
         }
 
@@ -307,13 +337,6 @@ public class GameManager : MonoBehaviour
 
         percentHitText.text = percentHit.ToString("F1") + "%";
         finalScoreText.text = currentScore.ToString();
-
-        // save highscore
-        if(currentScore > highScore)
-        {
-            highScore = currentScore;
-            PlayerPrefs.SetInt("Bullet", highScore);
-        }
 
         //Time.timeScale = 0f;
         gameIsPaused = true;

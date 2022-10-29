@@ -61,10 +61,16 @@ public class NoteObject : MonoBehaviour
                     }
 
                     gameObject.SetActive(false);
+                    Destroy(this.gameObject);
 
                 //GameManager.instance.noteHit();
                 }
             }
+        }
+        // ngancurin gameobject ketika sudah lewat atas
+        if(transform.localPosition.y >= 16)
+        {
+            Destroy(this.gameObject);
         }
     }
 
@@ -83,6 +89,7 @@ public class NoteObject : MonoBehaviour
         }
         if(other.tag == "Okay")
         {
+            Debug.Log("OKAY");
             okay = true;
             canBePressed = true;
         }

@@ -1,0 +1,66 @@
+Note:
+Klau menurut programmer ada kombinasi sfx sm button yg kurang sesuai, direvisi aja gpp
+atau klau misal progammer ada sfx yg lebih cocok gitu
+
+
+Fail Screen:
+Retry, Quit Button:
+- Hover: button_hover
+- Click: button_click
+
+
+Gameplay Screen:
+Arrow:
+- Press: arrow_press (press yg ada note sm ga ada note sama aja)
+Pause Button
+- Hover: ga ada
+- Click: pause_click
+
+
+Main Menu:
+Play, Options, Exit Button:
+- Hover: button_hover
+- Click: button_click
+BGM:
+pilih satu antara 2 opsi yang ada, boleh yg lain klau ada yg lebih cocok
+
+NOTE:
+klau bisa bgm dari main menu carry over ke options
+
+
+Pause Screen:
+Resume, Retry, Quit Button:
+- Hover: button_hover
+- Click: button_click
+
+
+Result Screen:
+Back, Retry Button:
+- Hover: button_hover
+- Click: button_click
+BGM:
+pilih satu antara 2 opsi yang ada, boleh yg lain klau ada yg lebih cocok
+
+
+Song Select:
+Back Button:
+- Hover: button_hover
+- Click: button_click_back
+Start Button:
+- Hover: button_hover
+- Click: button_click_start
+Next, Prev button (yg panah):
+- Hover: ga ada
+- Click: button_click_next_prev
+
+
+Volume Options:
+Back Button:
+- Hover: button_hover_back
+- Click: button_click_back
+Master, Music, SFX (opsi suara);
+- Hover: ga ada
+- Click: button_click_master_music_sfx
+
+NOTE:
+klau bisa bgm dari main menu carry over ke options

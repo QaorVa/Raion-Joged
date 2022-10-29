@@ -9,10 +9,24 @@ public class LoadSceneManager : MonoBehaviour
     public float transitionTime = 1f; //lama waktu transisi
     // Start is called before the first frame update
     // pakai method ini pada tombol pindah scene
+    private AudioSource bgMenu;
 
     public void Start()
     {
         gameObject.SetActive(true);
+        bgMenu = GameObject.FindWithTag("BGMenu").GetComponent<AudioSource>();
+        if(SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "Options")
+        {
+            bgMenu.Stop();
+        }
+        else
+        {
+            if(!bgMenu.isPlaying)
+            {
+                bgMenu.Play();
+            }
+            
+        }
     }
     public void BackScene()
     {

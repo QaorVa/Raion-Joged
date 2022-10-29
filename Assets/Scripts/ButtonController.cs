@@ -7,6 +7,7 @@ public class ButtonController : MonoBehaviour
     private SpriteRenderer sr;
     public Sprite defaultImg;
     public Sprite pressedImg;
+    private AudioSource sfxArrowPress;
 
     public KeyCode keyToPress;
 
@@ -15,6 +16,7 @@ public class ButtonController : MonoBehaviour
     {
         // memanggil sprite renderer dari button
         sr = GetComponent<SpriteRenderer>();
+        sfxArrowPress = GameObject.FindWithTag("ArrowClick").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,8 @@ public class ButtonController : MonoBehaviour
             if (Input.GetKeyDown(keyToPress))
             {
                 sr.sprite = pressedImg;
+                sfxArrowPress.Play();
+
             }
 
         // merubah sprite ketika sebuah tombol dilepaskan
