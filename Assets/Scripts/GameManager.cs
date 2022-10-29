@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     public GameObject resultScreen, resultsScreen2, failScreen, pauseScreen;
     public TMP_Text percentHitText, okaysText, goodsText, perfectsText, missesText, rankText, finalScoreText, accText;
 
+    public ParticleSystem x2Particle, x3Particle, x4Particle;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -214,11 +216,13 @@ public class GameManager : MonoBehaviour
         //currentScore += scorePerNote * currentMultiplier;
         scoreText.text = "SCORE: " + currentScore;
 
-        mulText.text = "MULTIPLIER: x" + currentMultiplier;
+        mulText.text = "x" + currentMultiplier;
 
         Accuracy();
 
         maxScore += perfectScore * 4;
+
+        CharParticle();
     }
 
     public void OkayHit()
@@ -280,11 +284,13 @@ public class GameManager : MonoBehaviour
         missedHits++;
 
         //menampilkan teks multiplier
-        mulText.text = "MULTIPLIER: x" + currentMultiplier;
+        mulText.text = "x" + currentMultiplier;
 
         Accuracy();
 
         maxScore += perfectScore * 4;
+
+        CharParticle();
     }
 
     public void Pause()
@@ -348,5 +354,38 @@ public class GameManager : MonoBehaviour
         float totalHit = okayHits + goodHits + perfectHits;
         float percentHit = (totalHit / totalNotes) * 100f;
         accText.text = percentHit.ToString("F0");
+    }
+
+    public void CharParticle()
+    {
+        if(currentMultiplier == 2)
+        {
+            mulText.fontSize = 60;
+            mulText.color = Color.yellow;
+
+            x2Particle.emissionRate = 50f;
+        } else if (currentMultiplier == 3)
+        {
+            mulText.fontSize = 70;
+            mulText.color = Color.green;
+
+            x3Particle.emissionRate = 50f;
+            x2Particle.emissionRate = 0f;
+        } else if (currentMultiplier == 4)
+        {
+            mulText.fontSize = 80;
+            mulText.color = Color.cyan;
+
+            x4Particle.emissionRate = 50f;
+            x3Particle.emissionRate = 0f;
+        } else
+        {
+            mulText.fontSize = 50;
+            mulText.color = Color.white;
+
+            x4Particle.emissionRate = 0f;
+            x3Particle.emissionRate = 0f;
+            x2Particle.emissionRate = 0f;
+        }
     }
 }
