@@ -16341,6 +16341,7 @@ MonoBehaviour:
   scoreManager: {fileID: 221298658}
   audioSource: {fileID: 515992359}
   loadManager: {fileID: 1290112720}
+  charAnim: {fileID: 379652344}
   startingScreen: {fileID: 176624684}
   currentScore: 0
   perfectScore: 300

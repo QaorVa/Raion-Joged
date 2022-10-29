@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject scoreManager;
     public AudioSource audioSource;
     public LoadSceneManager loadManager;
+    public Animator charAnim;
 
     public GameObject startingScreen;
 
@@ -265,6 +266,7 @@ public class GameManager : MonoBehaviour
     public void noteMissed()
     {
         Debug.Log("Note Missed");
+        charAnim.SetTrigger("Miss");
 
         //mereset nilai multiplier
         currentMultiplier = 1;

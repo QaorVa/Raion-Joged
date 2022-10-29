@@ -7,4 +7,5 @@ public class Song
 {
     public string songName;
     public Sprite songSprite;
+    public Sprite songBG;
 }

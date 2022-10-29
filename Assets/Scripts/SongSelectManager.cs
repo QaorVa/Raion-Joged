@@ -10,6 +10,7 @@ public class SongSelectManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text highScoreText;
     public Image songSprite;
+    public Image songbg;
     public GameObject playButton;
     public Sprite[] grade;
     public GameObject centerGrade;
@@ -29,7 +30,7 @@ public class SongSelectManager : MonoBehaviour
             selectedOption = 0;
         }
 
-        GetComponent<Animator>().SetTrigger("out");
+        UpdateSong(selectedOption);
     }
     public void BackOption()
     {
@@ -39,18 +40,19 @@ public class SongSelectManager : MonoBehaviour
             selectedOption = songDB.SongCount - 1;
         }
 
-        GetComponent<Animator>().SetTrigger("out");
-    }
-
-    public void UpdateFromAnim()
-    {
         UpdateSong(selectedOption);
     }
+
+    /*public void UpdateFromAnim()
+    {
+        UpdateSong(selectedOption);
+    }*/
 
     public void UpdateSong(int selectedOption)
     {
         Song song = songDB.GetSong(selectedOption);
         songSprite.sprite = song.songSprite;
+        songbg.sprite = song.songBG;
         nameText.text = song.songName;
         //Tulisan highscore
         if(PlayerPrefs.HasKey(song.songName))
@@ -59,7 +61,6 @@ public class SongSelectManager : MonoBehaviour
             centerGrade.SetActive(true);
 
             //highscore sesuai grade blum ya di edit lg ini berapa, grade[0 - 5] -> sprite[S - F]
-            Debug.Log(PlayerPrefs.GetInt(song.songName + "Grade"));
             centerGrade.GetComponent<Image>().sprite = grade[PlayerPrefs.GetInt(song.songName + "Grade")];
             
 
@@ -73,14 +74,15 @@ public class SongSelectManager : MonoBehaviour
         // playe button hilang ketika comingsoon
         if(song.songName == "ComingSoon")
         {
-            playButton.SetActive(false);
+            playButton.GetComponent<Button>().enabled = false;
             centerGrade.SetActive(false);
         } 
         else
         {
-            playButton.SetActive(true);
+            centerGrade.SetActive(true);
+            playButton.GetComponent<Button>().enabled = true;
         }
 
-        GetComponent<Animator>().SetTrigger("in");
+        //GetComponent<Animator>().SetTrigger("in");
     }
 }
