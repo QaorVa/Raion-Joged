@@ -427,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.6448975, y: 0}
+  m_AnchoredPosition: {x: -2.6449127, y: 0}
   m_SizeDelta: {x: 5.2898, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &285167081
@@ -1399,7 +1399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.045516968, y: 0}
+  m_AnchoredPosition: {x: 0.04550171, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224362569
@@ -1597,6 +1597,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5941055623895616092, guid: 8d1371d789580674faafe38f12151adb, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8266641521138213769, guid: 8d1371d789580674faafe38f12151adb, type: 3}
       propertyPath: m_Name
       value: SFXManager

@@ -626,7 +626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32.801, y: 18.444}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600995589
@@ -786,7 +786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.087502, y: 171}
+  m_AnchoredPosition: {x: 0.087502, y: 173.21657}
   m_SizeDelta: {x: 202.2572, y: 15.3467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127713417
@@ -811,8 +811,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Title
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2c5080c7bd928d3478f4ab47ad73cb46, type: 2}
-  m_sharedMaterial: {fileID: 1502654732409674793, guid: 2c5080c7bd928d3478f4ab47ad73cb46, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c541a15b9e10e6244bf528555a226039, type: 2}
+  m_sharedMaterial: {fileID: 3481600911786431027, guid: c541a15b9e10e6244bf528555a226039, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1633,7 +1633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.087517, y: -131.2}
+  m_AnchoredPosition: {x: 19.444592, y: -131.2}
   m_SizeDelta: {x: 97.5448, y: 16.1918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471777890
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c5080c7bd928d3478f4ab47ad73cb46, type: 2}
   m_sharedMaterial: {fileID: 1502654732409674793, guid: 2c5080c7bd928d3478f4ab47ad73cb46, type: 2}
@@ -1683,17 +1683,17 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

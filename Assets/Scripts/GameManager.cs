@@ -360,26 +360,39 @@ public class GameManager : MonoBehaviour
 
     public void CharParticle()
     {
-        if(currentMultiplier == 2)
+        
+
+        if (currentMultiplier == 2)
         {
             mulText.fontSize = 60;
+
+            LeanTween.scale(mulText.gameObject, new Vector3(0.5f, 0.5f, 0.5f), 0f);
+            LeanTween.scale(mulText.gameObject, new Vector3(1f, 1f, 1f), 0.3f).setEase(LeanTweenType.easeOutElastic);
+
             mulText.color = Color.yellow;
 
             x2Particle.emissionRate = 50f;
+
         } else if (currentMultiplier == 3)
         {
             mulText.fontSize = 70;
+            LeanTween.scale(mulText.gameObject, new Vector3(0.5f, 0.5f, 0.5f), 0f);
+            LeanTween.scale(mulText.gameObject, new Vector3(1f, 1f, 1f), 0.3f).setEase(LeanTweenType.easeOutElastic);
             mulText.color = Color.green;
 
-            x3Particle.emissionRate = 50f;
+            x3Particle.emissionRate = 80f;
             x2Particle.emissionRate = 0f;
+
         } else if (currentMultiplier == 4)
         {
             mulText.fontSize = 80;
+            LeanTween.scale(mulText.gameObject, new Vector3(0.5f, 0.5f, 0.5f), 0f);
+            LeanTween.scale(mulText.gameObject, new Vector3(1f, 1f, 1f), 0.3f).setEase(LeanTweenType.easeOutElastic);
             mulText.color = Color.cyan;
 
-            x4Particle.emissionRate = 50f;
+            x4Particle.emissionRate = 120f;
             x3Particle.emissionRate = 0f;
+
         } else
         {
             mulText.fontSize = 50;
