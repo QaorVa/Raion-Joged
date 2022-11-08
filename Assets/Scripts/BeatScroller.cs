@@ -31,7 +31,8 @@ public class BeatScroller : MonoBehaviour
         }
         else // jalanin scroller panah
         {
-            transform.position += new Vector3(0f, beatTempo * Time.deltaTime, 0f);
+            //transform.position += new Vector3(0f, beatTempo * Time.deltaTime, 0f);
+            //transform.localPosition = Vector3.Lerp(Vector3.up * SongManager.Instance.noteSpawnY, Vector3.up * SongManager.Instance.noteDespawnY, t);
         }
     }
 }

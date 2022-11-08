@@ -5,6 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - Activator
+  - Okay
+  - Good
+  - Perfect
+  - GameMusic
+  - ButtonHover
+  - ButtonClick
+  - BackButtonClick
+  - PlayButtonClick
+  - NextButtonClick
+  - PauseClick
+  - ArrowClick
+  - BGMenu
+  - MasterClick
   layers:
   - Default
   - TransparentFX
